@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+<script>
+function myFunction(){
+
+    var  yourArray   = [];
+var chk_arr = document.getElementsByName("rand"); 
+var chklength = chk_arr.length; 
+//alert(chklength);
+for(k=0;k< chklength;k++) { 
+   var randval=parseInt(chk_arr[k].value);
+yourArray.push(randval);
+} 
+//alert(yourArray);exit;
+
+//function myFunction() {
+    yourArray.sort(function(a, b){return a-b});
+    document.getElementById("sort").innerHTML = yourArray;
+  
+}
+
+
+
+</script>
+    <input type="text" name="rand" id="rand_1" value=""><br>
+    <input type="text" name="rand" id="rand_2"><br>
+    <input type="text" name="rand" id="rand_3"><br>
+    <input type="text" name="rand" id="rand_4"><br>
+    <input type="text" name="rand" id="rand_5"><br>
+    <input type="text" name="rand" id="rand_6"><br>
+    <input type="text" name="rand" id="rand_7"><br>
+     <input type="text" name="rand" id="rand_8"><br>
+      <input type="text" name="rand" id="rand_9"><br>
+       <input type="text" name="rand" id="rand_10"><br>
+    <p>Click the button to sort the array in ascending order.</p>
+
+<button onclick="myFunction();">SORT</button>
+
+<p id="sort"></p>
+</body>
+</html>

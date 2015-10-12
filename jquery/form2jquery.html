@@ -1,0 +1,211 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>REGESTRATION FORM</title>
+
+
+
+
+<script>
+function myRegform(){ 
+
+  
+var name =  document.getElementById('fname').value ;
+document.getElementById('f_name').innerHTML = name;
+//alert(name);
+var age =  document.getElementById('age').value ;
+document.getElementById('f_age').innerHTML = age;
+//alert(age);
+var email =  document.getElementById('email').value ;
+document.getElementById('f_email').innerHTML = email;
+
+var password =  document.getElementById('password').value ;
+document.getElementById('f_pwd').innerHTML = password;
+
+
+ 
+var gender="";
+if(document.getElementById('male').checked==true) {
+    gender="Male";
+document.getElementById('f_gen').innerHTML = gender;
+
+}
+else {
+    gender="Female";
+   
+document.getElementById('f_gen').innerHTML = gender;
+
+}
+
+
+
+
+var dob =  document.getElementById('dob').value ;
+document.getElementById('f_dob').innerHTML = dob;
+
+
+var address =  document.getElementById('address').value;
+document.getElementById('f_addr').innerHTML = address;
+
+
+var cityname = document.getElementsByName('check').value;
+var usercity = Array.prototype.slice.call(document.querySelectorAll(".city:checked")).map(function(el) {
+        return el.value;
+    }).join(', ')
+    
+document.getElementById('f_city').innerHTML = cityname;
+document.getElementById('f_city').innerHTML = usercity;
+
+
+       
+var cuntry=document.getElementById('cuntry').value;
+//alert(cuntry);
+document.getElementById('f_cun').innerHTML = cuntry;
+
+var path = document.getElementById("photo").value;
+var filename = path.substring(path.lastIndexOf("/") + 1);
+document.getElementById("f_img").innerHTML = filename;
+return false;
+}
+
+
+
+/* function validate()
+{
+ if( document.regform.name.value == "" )
+   {
+     alert( "Please provide your name!" );
+     document.regform.name.focus() ;
+     return false;
+   }
+    if( document.regform.age.value == "" )
+   {
+     alert( "Please provide your age!" );
+     document.regform.age.focus() ;
+     return false;
+   }
+    if( document.regform.email.value == "" )
+   {
+     alert( "Please provide your email!" );
+     document.regform.email.focus() ;
+     return false;
+   }
+   if( document.regform.password.value == "" )
+   {
+     alert( "Please provide your password!" );
+     document.regform.password.focus() ;
+     return false;
+   }
+   var a = 0, v=document.getElementsByName("gender")
+for(i=0;i<v.length;i++) {
+if(v.item(i).checked == false) {
+a++;
+}
+}
+if(a == v.length) {
+alert("Please select your gender");
+document.getElementById("gen").style.border = "2px solid red";
+return false;
+} else {
+document.getElementById("gen").style.border = "";
+}
+  if( document.regform.dob.value == "" )
+   {
+     alert( "Please provide your dob!" );
+     document.regform.dob.focus() ;
+     return false;
+   }
+    if( document.regform.address.value == "" )
+   {
+     alert( "Please provide your address!" );
+     document.regform.address.focus();
+     return false;
+   }
+    
+    if (document.regform.vsp.checked == false &&
+                    document.regform.hyd.checked == false &&
+                    document.regform.nzb.checked == false) {
+                alert("Please Select your city");
+                return false;
+            }
+    
+   
+ if (regform.country.selectedIndex == 0) 
+          {
+              alert("please select your country!");
+              regform.country.focus();
+              return (false);
+          }
+} */
+</script>
+</head>
+<body>
+
+<form name='regform' onSubmit="return(validate());">
+<tr><th>REGESTRATION FORM</th></tr></br></br>
+<tr><td>Name</td><td>
+<input type='text' name='name' id= 'fname' value=""/></td></tr></br></br>
+<tr><td>Age</td><td>
+<input type='text' name='age' id='age' value=''/></td></tr></br></br>
+<tr><td>Email</td><td>
+<input type='text' name='email' id='email' value=''/></td></tr></br></br>
+<tr><td>Password</td><td>
+<input type='password' name='password' id='password' value=''/></td></tr></br></br>
+<tr> <span id='gen'><td>gender</td><td>
+<input type='radio' name='gender' id='male' value='male'/>Male
+<input type='radio'  name='gender' id='female' value='female'/>Female</td></span></tr></br></br>
+<tr><td>Dob</td><td>
+<input type='date' name='dob' id='dob' value=''/></td></tr></br></br>
+<tr><td>Address</td><td>
+<textarea name='address' cols='35' rows='6' id='address'>
+</textarea></td></tr></br></br>
+
+<tr><td>City</td><td>
+<input type='checkbox' name='check[]' id="vsp" class="city" value='VSP'/>VSP
+<input type='checkbox' name='check[]' id="hyd" class="city" value='HYD'/>HYD
+<input type='checkbox' name='check[]' id="nzb" class="city" value='NZB'/>NZB
+</td></tr></br></br>
+
+
+<tr><td>Cuntry</td><td>
+<select name='cuntry'   id='cuntry'>
+<option ''>pleaseselect</option>
+<option value='INDIA'>INDIA</option>
+<option value='USA'>USA</option>
+<option value='UK'>UK</option>
+<option value='KENADA'>KENADA</option>
+</select></td></tr></br></br>
+<tr><td>image</td><td>
+<input type='file' name='image' id='photo' value=''/></td></tr></br></br>
+<tr><td ><button type='button' name='submit' onclick="myRegform();">Submit</button>
+<input type='reset' name='reset' value='reset'/></td></tr></br></br>
+
+</form>
+
+</body>
+
+</html>
+<table>
+  <tr><td>Name: </td><td id="f_name"></td></tr>
+  <tr><td>Age: </td><td id="f_age"></td></tr>
+  <tr><td>Email: </td><td id="f_email"></td></tr>
+  <tr><td>Password: </td><td id="f_pwd"></td></tr>
+  <tr><td>Gender: </td><td id="f_gen"></td></tr>
+   <tr><td>Dob: </td><td id="f_dob"></td></tr>
+    <tr><td>Address: </td><td id="f_addr"></td></tr>
+     <tr><td>City: </td><td id="f_city"></td></tr>
+     <tr><td>Cuntry: </td><td id="f_cun"></td></tr>
+      <tr><td>Image: </td><td id="f_img"></td></tr>
+</table>
+
+
+
+/*var chk_arr =  document.getElementsByName("education[]");
+var chklength = chk_arr.length;             
+for(k=0;k< chklength;k++)
+{
+ if(chk_arr[k].checked)
+    {
+document.getElementById("high1").innerHTML+=chk_arr[k].value;
+    }*/

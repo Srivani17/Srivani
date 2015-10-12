@@ -1,0 +1,55 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<input type="text" id="example" />
+<div id="output"></div>
+<button>Count</button>
+
+<script type="text/javascript">
+$('#example').on('change', function() {
+       
+    var charCount = {};
+    $.each(this.value.split(''), function(i, v) {
+        charCount[v] = charCount[v] + 1 || 1; 
+    });
+    
+    var output = $.map(charCount, function(value, index) { return value; }).join('');
+
+    $('#output').text( output );
+    
+    
+});
+
+</script>
+
+
+
+
+<!DOCTYPE html>
+<html>
+<body>
+Enter Address:<br>
+<textarea id="myTextarea" cols='30' rows='6'>
+</textarea>
+
+<p>Click the button to get the content of the text area.</p>
+
+<button type="button" onclick="myFunction()">SUBMIT</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myTextarea").value;
+    var res = x.split(" ");
+    //alert(res.length);
+    document.getElementById("demo").innerHTML = res.length;
+
+}
+</script>
+
+</body>
+</html>
+
+
+ 
