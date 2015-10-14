@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+</head>
+<body>
+<table style="background:#fff;">
+<tr align="center">
+<td style="font-size:14px;" >ID</td>
+<td style="font-size:14px;" >Name</td>
+<td style="font-size:14px;">Gender</td>
+ <td style="font-size:14px;">Address</td>
+   <td><button><span style="font:normal 12px agency, arial; color:black;cursor:pointer;" onclick="addMoreRows(this.form);"> AddValues </span></button> </td>
+   </tr>
+    <tr id="rowId">
+     <td><input name="name"  id="name" type="text" value="1" size="17%"/></td>
+      <td><input name="name" id="name1" type="text" value="vani" /></td>
+       <td><input name="name" id="name2" type="text" value="female" /></td> 
+       <td><input name="name" id="name3" type="text" value="vizag" /></td> 
+        </table>
+        <div id="addedRows"></div> </td>
+         </tr>
+
+<script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
+<script type="text/javascript">
+var rowCount = 1;
+
+ function addMoreRows(frm) { 
+  rowCount ++; 
+  var name=$("#name").val();
+  var name1=$("#name1").val();
+  var name2=$("#name2").val();
+  var name3=$("#name3").val();
+  var recRow = '<p id="rowCount'+rowCount+'"><tr><td><input name="1" type="text" size="17%" maxlength="120" value="'+name+'" /></td><td><input name="vani" type="text" maxlength="120" style="margin: 4px 5px 0 5px;" value="'+name1+'"/></td><td><input name="female" type="text" maxlength="120" style="margin: 4px 10px 0 0px;" value="'+name2+'"/></td><td><input name="vizag" type="text" maxlength="120" style="margin: 4px 5px 0 5px;" value="'+name3+'"/></td></tr><bu <a href="javascript:void(0);" onclick="removeRow('+rowCount+');"><button>Delete</button></a></p>'; 
+  $('#addedRows').append(recRow);
+   } 
+   function removeRow(removeNum) 
+   { 
+    $('#rowCount'+removeNum).remove();
+   }
+    </script>
+
+</script>
+</body>
+</html>
