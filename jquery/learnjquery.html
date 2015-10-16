@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $("p").hide();
+    });
+    $("#show").click(function(){
+        $("p").show();
+    });
+});
+</script>
+</head>
+<body>
+
+<p>Hello.</p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button><br><br>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("div").toggle();
+    });
+});
+</script>
+</head>
+<body>
+
+<button>Toggle</button>
+
+<div>This is a paragraph with little content.</div>
+<div>This is another small paragraph.</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#div1").fadeIn();
+        
+    });
+});
+</script>
+</head>
+<body>
+
+
+<button>Click to fade In boxes</button><br><br>
+
+<div id="div1" style="width:80px;height:80px;background-color:red;"></div><br>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+    });
+});
+</script>
+ 
+<style> 
+#panel, #flip {
+    padding: 5px;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+}
+
+#panel {
+    padding: 50px;
+    display: none;
+}
+</style>
+</head>
+<body>
+ 
+<div id="flip">Click to slide  up and downe panel</div>
+<div id="panel">Hello world!</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+    $("button").click(function(){
+        var div = $("div");  
+        div.animate({left: '100px'}, "slow");
+        div.animate({fontSize: '3em'}, "slow");
+    });
+});
+</script> 
+</head>
+<body>
+
+<button>Start Animation</button>
+
+<div style="background:#98bf21;height:100px;width:100px;position:absolute;">Hi.</div>
+
+</body>
+</html>
